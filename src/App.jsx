@@ -1,15 +1,26 @@
-c
-
-import './App.css'
-
+// import { useState } from "react";
+import Authenticate from "./Authenticate";
+import SignUpForm from "./SignUpForm";
+// import './App.css'
+const [token, setToken] = useState(null);
 function App() {
-
+  const [token, setToken] = useState(null);
 
   return (
     <>
-      <div></div>
+      <SignUpForm token={token} setToken={setToken} />
+      <Authenticate token={token} setToken={setToken} />
     </>
-  
-)}
+  );
+}
 
-export default App
+export default function App() {
+  return (
+    <>
+      <Authenticate />
+      <SignUpForm />
+    </>
+  );
+}
+
+// export default App
